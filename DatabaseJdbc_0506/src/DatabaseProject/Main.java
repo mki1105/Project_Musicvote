@@ -9,11 +9,12 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		MusicDao mdo = new MusicDao();
-		int num = 0; //설문항목 선택
+		
+		int num = 0;
 		long choice = 0;
-		boolean ch = true;
+		boolean check = true;
 
-		while (ch) {
+		while (check) {
 			System.out.println("==좋아하는 음악장르 설문조사==");
 			System.out.println("1. 초기화하기");
 			System.out.println("2. 음악장르 등록하기");
@@ -55,7 +56,7 @@ public class Main {
 					for (MusicVo tmp : ret3)
 						System.out.println(tmp);
 				}
-				System.out.printf("%d.기타(ex:트로트,EDM,힙합):", mdo.countNum() + 1);
+				System.out.printf("%d.기타(ex:트로트, EDM, 힙합):", mdo.countNum() + 1);
 				System.out.println("\n");
 				
 				System.out.println("선택항목에 없다면 추가로 장르를 등록하시오.");
@@ -72,23 +73,22 @@ public class Main {
 					System.out.println(choice + "번 선택!");
 					mdo.updatevote(choice); // "VOTE"누적.
 				}
-			
 				break;
 
 			case 4: // 설문항목 변경하기
 				List<MusicVo> ret4 = mdo.selectAll();
 				if (ret4 == null) {
-					System.out.println("데이터가 없습니다.(음악장르를 등록하시오).");
+					System.out.println("데이터가 없습니다(음악장르를 등록하시오).");
 					break;
 				} else {
 					for (MusicVo tmp : ret4)
 						System.out.println(tmp);
 					
-					System.out.println("변경하고자 하는 번호를 고르시오 ");
+					System.out.println("변경하고자 하는 번호를 고르시오. ");
 					choice = scan.nextInt();
 					scan.nextLine();
 					
-					System.out.println("변경될 장르를 적으시오 ");	
+					System.out.println("변경될 새로운 장르를 적으시오.");	
 					String alter = scan.nextLine();		
 				
 					mdo.altermusic(alter, choice);
@@ -98,7 +98,7 @@ public class Main {
 			case 5: // 설문현황보기
 				List<MusicVo> ret5 = mdo.selectAll();
 				if (ret5 == null) {
-					System.out.println("데이터가 없습니다.");
+					System.out.println("데이터가 없습니다.(음악장르를 등록하시오).");
 					break;
 				} else {
 					for (MusicVo tmp : ret5)
@@ -106,22 +106,20 @@ public class Main {
 				}				
 				break;
 
-
 			case 6: // 최종 투표 수 확인 후 종료하기
 				List<MusicVo> ret6 = mdo.selectAll();
 				if (ret6 == null) {
-					System.out.println("데이터가 없습니다.");
+					System.out.println("데이터가 없습니다.(음악장르를 등록하시오).");
 					break;
 				} else {
 					for (MusicVo tmp : ret6)
 						System.out.println(tmp.voteView());
 				}	
-				
-				System.out.println("프로그램 종료!\n");
 				System.out.println("==================");
 				System.out.println("총 투표수 : " + mdo.totalvote() + " 표");
 				System.out.println("==================");
-				ch = false;
+				System.out.println("프로그램 종료!\n");
+				check = false;
 				break;
 			}
 			System.out.println();
