@@ -83,8 +83,8 @@
         // DROP SEQUENCE "M_V"; - 시퀀스 삭제
         // CREATE SEQUENCE "M_V" NOCACHE; - 시퀀스 생성
         String[] init = new String[] { "TRUNCATE TABLE \"MUSIC_VOTE\"",
-        															"DROP SEQUENCE \"M_V\"",
-        															"CREATE SEQUENCE \"M_V\" NOCACHE" };
+        					"DROP SEQUENCE \"M_V\"",
+        					"CREATE SEQUENCE \"M_V\" NOCACHE" };
         ```
         
     2. insertMusic : 초기화 되어 있는 상태에서 데이터(음악장르)를 삽입할 수 있는 메서드
