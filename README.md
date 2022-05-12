@@ -68,7 +68,9 @@
     - 투표 진행 후 종료(6번), 최종 투표 수결과 확인
         
         ![Untitled](./img/Untitled%2010.png)
-        
+- 시현 영상
+    ![DB프로젝트_설문조사 어플리케이션구현_김민경1](https://user-images.githubusercontent.com/104549777/168001382-47609fc5-6b86-4a5e-98dc-c19d512ae9fb.gif)
+
 <br/>
 
 ## 4. 기능설계 : Class & Method
