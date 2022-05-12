@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-	// DB연동 설문조사 만들기(좋아하는 음악장르)
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		MusicDao mdo = new MusicDao();
